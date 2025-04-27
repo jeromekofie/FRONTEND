@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Project Showcase Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1><i class="fas fa-lightbulb"></i> Innovation Project Showcase Portal</h1>
+            <nav>
+                <a href="#submit" class="nav-link"><i class="fas fa-upload"></i> Submit Project</a>
+                <a href="#projects" class="nav-link"><i class="fas fa-list"></i> View Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="submit" class="section">
+            <h2><i class="fas fa-upload"></i> Submit Your Project</h2>
+            <form id="projectForm" class="project-form">
+                <div class="form-group">
+                    <label for="title">Project Title</label>
+                    <input type="text" id="title" placeholder="Enter your project title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Project Description</label>
+                    <textarea id="description" placeholder="Describe your project in detail" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="file">Project Files</label>
+                    <input type="file" id="file" required>
+                    <small class="file-hint">Supported formats: PDF, ZIP, DOC, DOCX</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="videoLink">Video Link (Optional)</label>
+                    <input type="url" id="videoLink" placeholder="https://youtube.com/...">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Submit Project
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section id="projects" class="section">
+            <h2><i class="fas fa-list"></i> Submitted Projects</h2>
+            <div id="loading" class="loading-spinner" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Loading projects...
+            </div>
+            <div id="error-message" class="error-message" style="display: none;"></div>
+            <div id="projectList" class="project-grid"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Innovation Project Showcase Portal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
